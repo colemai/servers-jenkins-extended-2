@@ -8,4 +8,65 @@
 ##     type: string
 
 variables:
+  BACKUP_BUCKET:
+    default: 'this is the default'
+    description:
+    overrides:
+    required: true
+    type:
+  ENV:
+    default:
+    description:
+    overrides:
+    required: true
+    type:
+  JENKINS_AMI:
+    default: ami-1234567
+    description:
+    overrides:
+    required: true
+    type:
+  JENKINS_INGRESS_CIDRS:
+    default:
+    description:
+    overrides:
+    required: true
+    type:
+  JENKINS_INGRESS_PORTS:
+    default:
+    description:
+    overrides:
+    required: true
+    type:
+  JENKINS_NAME:
+    default:
+    description:
+    overrides:
+    required: true
+    type:
+  JENKINS_SIZE:
+    default:
+    description:
+    overrides:
+    required: true
+    type:
+  PRIVATE_SUBNET_NAME:
+    default:
+    description:
+    overrides:
+    required: true
+    type:
+  REGION:
+    default:
+    description:
+    overrides:
+    required: true
+    type:
+  VPC_NAME:
+    default:
+    description:
+    overrides:
+    required: true
+    type:
 
+                  
