@@ -5,14 +5,14 @@ The paths should be considered relative to the parent of this directory.
 
 For example, if you have a directory structure like this, 
 
-- parent
-  \- overrides
-     \- stack-a
-        \- boot-scripts
-           \- order.yaml
-  \- stack-a
-     \- boot-scripts
-        \- order.yaml
++-- parent
+|   +-- overrides
+|   |   +-- stack-a
+|   |   |   +-- boot-scripts
+|   |   |   |   +-- order.yaml
+|   +-- stack-a
+|   |   +-- boot-scripts
+|   |   |   +-- order.yaml
 
 Because the directory structure within the override directory matches the structure of the parent, 
 the 'order.yaml' file will be ignored in the stack-a directory and instead the overrides/stack-a order.yaml
