@@ -1,0 +1,4 @@
+
+Scripts contained in this directory will be proccessed (if possible) when an instance
+is asked to shut down. The order in which these scripts will be run is defined by the
+order.yaml
