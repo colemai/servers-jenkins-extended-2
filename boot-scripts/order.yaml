@@ -1,7 +1,8 @@
-
 ## this yaml file dictates the order in which the scripts will run. i.e:
 ## script-order:
 ##   - install_chef.sh
 ##   - run_chef.sh
 
 script-order:
+  - 01_install_jenkins.sh
+  - 02_setup_ports.sh
