@@ -1,7 +1,7 @@
 
 This is your services directory. Place a config.rb file in here containing CloudCoreo service
 syntax. For example, your config.rb might contain the following in order to create a VPC
-
+```
 coreo_aws_vpc_vpc "my-vpc" do
   action :sustain
   cidr "12.0.0.0/16"
@@ -25,4 +25,4 @@ coreo_aws_vpc_subnet "my-public-subnet" do
   vpc "my-vpc"
   map_public_ip_on_launch true
 end
-
+```
