@@ -9,23 +9,20 @@
 
 variables:
   BACKUP_BUCKET:
-    default: 'this is the default'
+    default: 
     description:
     overrides:
     required: true
     type:
   ENV:
-    default:
-    description:
-    overrides:
+    default: dev
+    description: just a way to namespace the backups
     required: true
-    type:
   JENKINS_AMI:
-    default: ami-1234567
-    description:
+    default: ami-76817c1e
+    description: Amazon Linux AMI 2014.03.2 (HVM)
     overrides:
     required: true
-    type:
   JENKINS_INGRESS_CIDRS:
     default:
     description:
@@ -34,22 +31,19 @@ variables:
     type:
   JENKINS_INGRESS_PORTS:
     default:
-    description:
-    overrides:
+      - 80
+      - 22
+    description: Ports to open up in the jenkins security group
     required: true
-    type:
+    type: array
   JENKINS_NAME:
-    default:
-    description:
-    overrides:
+    default: jenkins
+    description: the name of the jenkins server
     required: true
-    type:
   JENKINS_SIZE:
-    default:
-    description:
-    overrides:
+    default: t2.small
+    description: the size of the server to launch
     required: true
-    type:
   PRIVATE_SUBNET_NAME:
     default:
     description:
@@ -57,8 +51,8 @@ variables:
     required: true
     type:
   REGION:
-    default:
-    description:
+    default: 
+    description: 
     overrides:
     required: true
     type:
