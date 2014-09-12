@@ -57,6 +57,7 @@ coreo_aws_ec2_instance "${JENKINS_NAME}" do
   security_groups ["${JENKINS_NAME}"]
   associate_public_ip true
   role "${JENKINS_NAME}"
+  ssh_key "${JENKINS_KEYPAIR}"
 end
 
 coreo_aws_ec2_autoscaling "${JENKINS_NAME}" do

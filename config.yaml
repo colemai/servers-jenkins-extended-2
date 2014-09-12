@@ -36,6 +36,9 @@ variables:
     description: Ports to open up in the jenkins security group
     required: true
     type: array
+  JENKINS_KEYPAIR:
+    description: the name of the keypair to launch jenkins with
+    require: true
   JENKINS_NAME:
     default: jenkins
     description: the name of the jenkins server
