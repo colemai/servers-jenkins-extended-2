@@ -28,7 +28,7 @@ variables:
     description:
     overrides:
     required: true
-    type:
+    type: array
   JENKINS_INGRESS_PORTS:
     default:
       - 80
