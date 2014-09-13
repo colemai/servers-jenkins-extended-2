@@ -6,3 +6,4 @@
 script-order:
   - 01_install_jenkins.sh
   - 02_setup_ports.sh
+  - 03_start_jenkins.sh
