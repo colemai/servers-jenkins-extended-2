@@ -20,6 +20,11 @@ coreo_aws_ec2_securityGroups "${JENKINS_NAME}" do
             :protocol => :tcp,
             :ports => ${JENKINS_INGRESS_PORTS},
             :cidrs => ${JENKINS_INGRESS_CIDRS}
+          },{ 
+            :direction => :egress,
+            :protocol => :tcp,
+            :ports => [0..65535],
+            :cidrs => [0.0.0.0/0]
           }
     ]
 end
