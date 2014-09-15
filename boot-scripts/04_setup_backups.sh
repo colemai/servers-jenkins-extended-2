@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if ! rpm -qa | grep -q cloudcoreo-directory-backup; 
+if ! rpm -qa | grep -q cloudcoreo-directory-backup; then
     yum install -y cloudcoreo-directory-backup
 fi
 
