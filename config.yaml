@@ -20,6 +20,12 @@ variables:
     overrides:
     required: true
     type:
+  JENKINS_BACKUP_CRON:
+    default: "0 * * * *"
+    description: default to backing up every hour on the hour
+    overrides:
+    required: true
+    type:
   ENV:
     default: dev
     description: just a way to namespace the backups
