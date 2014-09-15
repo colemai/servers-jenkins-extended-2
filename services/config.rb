@@ -38,8 +38,8 @@ coreo_aws_iam_policy "${JENKINS_NAME}" do
     {
       "Effect": "Allow",
       "Resource": [
-          "arn:aws:s3:::${BACKUP_BUCKET}/${REGION}/${ENV}/jenkins/${JENKINS_NAME}",
-          "arn:aws:s3:::${BACKUP_BUCKET}/${REGION}/${ENV}/jenkins/${JENKINS_NAME}/*"
+          "arn:aws:s3:::${BACKUP_BUCKET}/${REGION}/jenkins/${ENV}/${JENKINS_NAME}",
+          "arn:aws:s3:::${BACKUP_BUCKET}/${REGION}/jenkins/${ENV}/${JENKINS_NAME}/*"
       ],
       "Action": [ 
           "s3:*"
