@@ -16,7 +16,7 @@ cat <<EOF > "${script_dir}/pre-restore.sh"
 /etc/init.d/jenkins stop
 
 EOF
-cat <<EOF > "${script_dir}/pre-restore.sh"
+cat <<EOF > "${script_dir}/post-restore.sh"
 #!/bin/bash
 /etc/init.d/jenkins start
 
@@ -25,7 +25,7 @@ EOF
 ## now we need to perform the restore
 (
     cd /opt/; 
-    python cloudcoreo-directory-backup.py --s3-backup-region ${BACKUP_BUCKET_REGION} --s3-backup-bucket ${BACKUP_BUCKET} --s3-prefix ${MY_REGION}/jenkins/${ENV}/${JENKINS_NAME} --directory /var/lib/jenkins --dump-dir /tmp --restore
+    python cloudcoreo-directory-backup.py --s3-backup-region ${BACKUP_BUCKET_REGION} --s3-backup-bucket ${BACKUP_BUCKET} --s3-prefix ${MY_REGION}/jenkins/${ENV}/${JENKINS_NAME} --directory /var/lib/jenkins --dump-dir /tmp --restore --post-restore-script "${script_dir}/post-restore.sh" --pre-restore-script "${script_dir}/pre-restore.sh"
 )
 
 ## now that we are restored, lets set up the backups
