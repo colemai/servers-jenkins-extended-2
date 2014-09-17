@@ -8,3 +8,4 @@ script-order:
   - 02_setup_ports.sh
   - 03_start_jenkins.sh
   - 04_setup_backups.sh
+  - 05_set_dns_record.sh
