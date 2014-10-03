@@ -74,8 +74,7 @@ coreo_aws_iam_policy "${JENKINS_NAME}-s3" do
       "Effect": "Allow",
       "Resource": [
           "arn:aws:s3:::${BACKUP_BUCKET}",
-          "arn:aws:s3:::${BACKUP_BUCKET}/*",
-          "arn:aws:s3:::${BACKUP_BUCKET}/test/*"
+          "arn:aws:s3:::${BACKUP_BUCKET}/*"
       ],
       "Action": [
           "s3:GetBucket*", 
