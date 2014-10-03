@@ -31,7 +31,7 @@ end
 
 coreo_aws_iam_policy "${JENKINS_NAME}" do
   action :sustain
-  policy_name "AllowS3Backup"
+  policy_name "AllowJenkinsS3Backup"
   policy_document <<-EOH
 {
   "Statement": [
