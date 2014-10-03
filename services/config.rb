@@ -47,6 +47,24 @@ coreo_aws_iam_policy "${JENKINS_NAME}-route53" do
 EOH
 end
 
+coreo_aws_iam_policy "${JENKINS_NAME}-ec2" do
+  action :sustain
+  policy_name "AllowJenkinsRoute53Entries"
+  policy_document <<-EOH
+{
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Resource": "*",
+      "Action": [
+          "ec2:*"
+      ]
+    }
+  ]
+}
+EOH
+end
+
 coreo_aws_iam_policy "${JENKINS_NAME}-s3" do
   action :sustain
   policy_name "AllowJenkinsS3Backup"
@@ -88,7 +106,7 @@ end
 
 coreo_aws_iam_instance_profile "${JENKINS_NAME}" do
   action :sustain
-  policies ["${JENKINS_NAME}-s3", "${JENKINS_NAME}-route53"]
+  policies ["${JENKINS_NAME}-s3", "${JENKINS_NAME}-route53", "${JENKINS_NAME}-ec2"]
 end
 
 coreo_aws_ec2_instance "${JENKINS_NAME}" do
