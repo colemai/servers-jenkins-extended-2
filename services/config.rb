@@ -86,6 +86,26 @@ coreo_aws_iam_policy "${JENKINS_NAME}-s3" do
 EOH
 end
 
+coreo_aws_iam_policy "${JENKINS_NAME}-yum" do
+  action :sustain
+  policy_document <<-EOH
+{
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Resource": [
+          "arn:aws:s3:::${YUM_REPO_BUCKET}",
+          "arn:aws:s3:::${YUM_REPO_BUCKET}/*"
+      ],
+      "Action": [ 
+          "s3:*"
+      ]
+    }
+  ]
+}
+EOH
+end
+
 coreo_aws_iam_instance_profile "${JENKINS_NAME}" do
   action :sustain
   policies ["${JENKINS_NAME}-s3", "${JENKINS_NAME}-route53"]
