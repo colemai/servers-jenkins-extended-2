@@ -108,7 +108,7 @@ end
 
 coreo_aws_iam_instance_profile "${JENKINS_NAME}" do
   action :sustain
-  policies ["${JENKINS_NAME}-s3", "${JENKINS_NAME}-route53"]
+  policies ["${JENKINS_NAME}-s3", "${JENKINS_NAME}-route53", "${JENKINS_NAME}-yum"]
 end
 
 coreo_aws_ec2_instance "${JENKINS_NAME}" do
