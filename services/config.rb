@@ -113,7 +113,7 @@ end
 
 coreo_aws_ec2_instance "${JENKINS_NAME}" do
   action :define
-  image_id "${JENKINS_AMI}"
+  image_id "ami-12345678"
   size "${JENKINS_SIZE}"
   security_groups ["${JENKINS_NAME}"]
   role "${JENKINS_NAME}"
