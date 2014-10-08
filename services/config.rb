@@ -118,6 +118,12 @@ coreo_aws_ec2_instance "${JENKINS_NAME}" do
   security_groups ["${JENKINS_NAME}"]
   role "${JENKINS_NAME}"
   ssh_key "${JENKINS_KEYPAIR}"
+  disks [
+         {
+           :device_name => "/dev/xvda",
+           :volume_size => 50
+         }
+        ]
 end
 
 coreo_aws_ec2_autoscaling "${JENKINS_NAME}" do
