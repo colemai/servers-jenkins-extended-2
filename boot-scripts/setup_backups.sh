@@ -18,8 +18,7 @@ cat <<EOF > "${script_dir}/pre-restore.sh"
 EOF
 cat <<EOF > "${script_dir}/post-restore.sh"
 #!/bin/bash
-/etc/init.d/jenkins start
-
+exit 0
 EOF
 
 ## now we need to perform the restore
@@ -29,4 +28,4 @@ EOF
 )
 
 ## now that we are restored, lets set up the backups
-echo "${JENKINS_BACKUP_CRON} ps -fwwC python | grep -q cloudcoreo-directory-backup || { cd /opt/; nohup python cloudcoreo-directory-backup.py --s3-backup-region ${BACKUP_BUCKET_REGION} --s3-backup-bucket ${BACKUP_BUCKET} --s3-prefix ${MY_REGION}/jenkins/${ENV}/${JENKINS_NAME} --directory /var/lib/jenkins --dump-dir /tmp --exclude '.*/.m2.*' --exclude '.*/workspace/.*' --exclude '.*/modules/.*' & }" | crontab
+echo "${JENKINS_BACKUP_CRON} ps -fwwC python | grep -q cloudcoreo-directory-backup || { cd /opt/; nohup python cloudcoreo-directory-backup.py --s3-backup-region ${BACKUP_BUCKET_REGION} --s3-backup-bucket ${BACKUP_BUCKET} --s3-prefix ${MY_REGION}/jenkins/${ENV}/${JENKINS_NAME} --directory /var/lib/jenkins --dump-dir /tmp --exclude '.*/.m2.*' --exclude '.*/workspace/.*' --exclude '.*/jobs/.*/modules/.*' & }" | crontab
