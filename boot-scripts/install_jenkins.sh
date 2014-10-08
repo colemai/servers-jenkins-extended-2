@@ -5,4 +5,4 @@ wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.r
 rpm --import http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key
 
 yum makecache
-yum install jenkins -y
+yum install -y jenkins rpm-build
