@@ -1,11 +1,10 @@
 #!/bin/bash
 
-if [ ! -d "/usr/local/apache-maven-3.2.3" ]; then
+if ! rpm -qa | grep -q apache-maven; then
     (
         cd /tmp/
-        wget http://apache.mirrors.hoobly.com/maven/maven-3/3.2.3/binaries/apache-maven-3.2.3-bin.tar.gz
-        tar -zxf apache-maven-3.2.3-bin.tar.gz
-        rm -f apache-maven-3.2.3-bin.tar.gz
-        mv apache-maven-3.2.3 /usr/local/
+	wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
+	sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
+	yum install -y apache-maven
     )
 fi
