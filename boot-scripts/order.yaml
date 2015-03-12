@@ -8,6 +8,6 @@ script-order:
   - install_java_7.sh
   - install_jenkins.sh
   - setup_ports.sh
-  - start_jenkins.sh
   - setup_backups.sh
   - set_dns_record.sh
+  - start_jenkins.sh
