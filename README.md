@@ -65,12 +65,12 @@ Jenkins Server
 
 
 
-## Optional variables with no default
+## Optional variables with default
 
 **None**
 
 
-## Optional variables with default
+## Optional variables with no default
 
 ### `JENKINS_KEYPAIR`:
   * description: the name of the keypair to launch jenkins with
