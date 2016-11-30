@@ -77,5 +77,10 @@ variables:
     overrides:
     required: true
     type:
-
+  YUM_REPO_BUCKET
+    default:
+    description:
+    overrides:
+    required: true
+    type:
                   
