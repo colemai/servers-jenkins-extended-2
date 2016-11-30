@@ -47,6 +47,13 @@ coreo_aws_iam_policy "${JENKINS_NAME}-route53" do
 EOH
 end
 
+coreo_aws_vpc_subnet "{$JENKINS_NAME}-subnet" do
+  action :sustain
+  number_of_zones 3
+  percent_of_vpc_allocated 25
+  vpc "${JENKINS_NAME}-vpc"
+end
+
 coreo_aws_iam_policy "${JENKINS_NAME}-s3" do
   action :sustain
   policy_name "AllowJenkinsS3Backup"
