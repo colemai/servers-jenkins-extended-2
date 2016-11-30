@@ -5,7 +5,7 @@
 ##
 coreo_aws_vpc_vpc "${JENKINS_NAME}-vpc" do
   action :sustain
-  cidr "12.0.0.0/16"
+  cidr "10.10.0.0/16"
   internet_gateway true
 end
 
