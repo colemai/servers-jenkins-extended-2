@@ -3,17 +3,17 @@
 ## This config.rb file exists to create and maintain services not related to compute.
 ## for example, a VPC might be maintained using:
 ##
-## coreo_aws_vpc_vpc "my-vpc" do
-##   action :sustain
-##   cidr "12.0.0.0/16"
-##   internet_gateway true
-## end
-##
+coreo_aws_vpc_vpc "${JENKINS_NAME}-vpc" do
+  action :sustain
+  cidr "12.0.0.0/16"
+  internet_gateway true
+end
+
 
 coreo_aws_ec2_securityGroups "${JENKINS_NAME}" do
   action :sustain
   description "Jenkins security group"
-  vpc "${VPC_NAME}"
+  vpc "${JENKINS_NAME}-vpc"
   allows [ 
           { 
             :direction => :ingress,
