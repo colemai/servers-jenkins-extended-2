@@ -51,7 +51,14 @@ coreo_aws_vpc_subnet "{$JENKINS_NAME}-subnet" do
   action :sustain
   number_of_zones 3
   percent_of_vpc_allocated 25
+  route_table "unit-test-public-routetable"
   vpc "${JENKINS_NAME}-vpc"
+end
+
+coreo_aws_vpc_routetable "${JENKINS_NAME}-routetable" do
+  action :sustain
+  vpc "${JENKINS_NAME}-vpc"
+  number_of_tables 1
 end
 
 coreo_aws_iam_policy "${JENKINS_NAME}-s3" do
