@@ -47,11 +47,11 @@ coreo_aws_iam_policy "${JENKINS_NAME}-route53" do
 EOH
 end
 
-# coreo_aws_vpc_subnet "{$JENKINS_NAME}-subneta" do
-#   action :sustain
-#   vpc "${JENKINS_NAME}-vpc"
-#   percent_of_vpc_allocated 25
-# end
+coreo_aws_vpc_subnet "{$JENKINS_NAME}-subneta" do
+  action :sustain
+  vpc "${JENKINS_NAME}-vpc"
+  percent_of_vpc_allocated 25
+end
 
 
 coreo_aws_iam_policy "${JENKINS_NAME}-s3" do
@@ -138,5 +138,5 @@ coreo_aws_ec2_autoscaling "${JENKINS_NAME}" do
   minimum 1
   maximum 1
   server_definition "${JENKINS_NAME}"
-  # subnet "${PRIVATE_SUBNET_NAME}"
+  subnet "${PRIVATE_SUBNET_NAME}"
 end
