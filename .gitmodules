@@ -1,3 +1,6 @@
 [submodule "extends"]
 	path = extends
 	url = git@github.com:CloudCoreo/servers-base.git
+[submodule "vpc-network-only"]
+	path = vpc-network-only
+	url = git@github.com:CloudCoreo/vpc-network-only.git
