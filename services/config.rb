@@ -47,12 +47,21 @@ coreo_aws_iam_policy "${JENKINS_NAME}-route53" do
 EOH
 end
 
-coreo_aws_vpc_subnet "{$JENKINS_NAME}-subneta" do
+coreo_aws_vpc_subnet "${JENKINS_NAME}-subneta" do
   action :sustain
   vpc "${JENKINS_NAME}-vpc"
   percent_of_vpc_allocated 25
 end
 
+# coreo_aws_vpc_routetable "test-routetable-aa" do
+#   action :sustain
+#   vpc "test-vpc-aa"
+#   number_of_tables 3
+#   tags [
+#            "Paul=Allen",
+#            "dev=true"
+#        ]
+# end
 
 coreo_aws_iam_policy "${JENKINS_NAME}-s3" do
   action :sustain
