@@ -50,6 +50,7 @@ end
 coreo_aws_vpc_subnet "{$JENKINS_NAME}-subneta" do
   action :sustain
   vpc "${JENKINS_NAME}-vpc"
+  percent_of_vpc_allocated 25
 end
 
 
