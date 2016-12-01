@@ -5,7 +5,7 @@
 ##
 coreo_aws_vpc_vpc "${JENKINS_NAME}-vpc" do
   action :sustain
-  cidr "10.10.0.0/16"
+  cidr "10.91.0.0/16"
   internet_gateway true
 end
 
@@ -49,8 +49,6 @@ end
 
 coreo_aws_vpc_subnet "{$JENKINS_NAME}-subneta" do
   action :sustain
-  number_of_zones 3
-  percent_of_vpc_allocated 25
   vpc "${JENKINS_NAME}-vpc"
 end
 
