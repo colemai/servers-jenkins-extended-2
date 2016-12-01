@@ -4,3 +4,6 @@
 [submodule "vpc-network-only"]
 	path = vpc-network-only
 	url = git@github.com:CloudCoreo/vpc-network-only.git
+[submodule "cloudcoreo-vpc-public/extends"]
+	path = cloudcoreo-vpc-public/extends
+	url = git@github.com:CloudCoreo/cloudcoreo-vpc-public.git
